@@ -6,7 +6,7 @@ from coffeematcher.matcher import match_participants
 from coffeematcher.parser import parse_participants
 
 data_dir = os.path.join(os.path.split(os.path.dirname(__file__))[0], 'data')
-memory_file = os.path.join(data_dir, 'memory.pkl')
+memory_file = os.path.join(data_dir, 'memory.pickle')
 participants_file = os.path.join(data_dir,'participants.txt')
 
 def main():
