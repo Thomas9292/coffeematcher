@@ -1,6 +1,6 @@
 # coffeematcher
 
-Coffeematcher is a python library to randomly match participants for coffee meetings.
+coffeematcher is a python library to randomly match participants for coffee meetings.
 
 ## Installation
 

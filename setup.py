@@ -11,7 +11,7 @@ setup(
     install_requires=[],
     entry_points={
       'console_scripts': [
-        'run_coffee = coffeematcher.match:main',
+        'run_coffee = coffeematcher.main:main',
       ],
     }
 )
