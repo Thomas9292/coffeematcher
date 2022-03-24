@@ -2,6 +2,7 @@ import random
 from typing import Dict, List, Tuple
 
 from coffeematcher.io import load_memory_from_file, save_memory_to_file
+from coffeematcher.utils import MatchingError
 
 max_mem_size = 4
 
@@ -17,6 +18,9 @@ def match_participants(
 
     Returns:
         List[Tuple[str, ...]]: Matched participants in duo's and potentially one trio (in odd situation)
+
+    Throws:
+        MatchingError: If non-deterministic matching algorithm doesn't supply a viable solution
     """
     memory = load_memory_from_file(memory_file)
     memory = prepare_memory_with_particants(participants, memory)
@@ -32,7 +36,7 @@ def match_participants(
 
         # If a deadlock is reached, return not succesful (TODO: change to throwing error)
         if len(match_pool) == 0:
-            return [("not", "successful")]
+            raise MatchingError
 
         # Pick the match, remove matched duo from match pool and update the memory
         personB = random.choice(match_pool)
