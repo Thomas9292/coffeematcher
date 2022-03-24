@@ -20,13 +20,22 @@ def load_memory_from_file(memory_file: str) -> Dict[str, List[str]]:
         return dict()
 
 
-def save_memory_to_file(memory: Dict[str, List[str]], memory_file: str):
+def save_memory_to_file(memory: Dict[str, List[str]], memory_file: str, backup=True):
     """Pickles memory and saves it to file
 
     Args:
         memory (Dict[str, List[str]]): memory dictionary to be saved
         memory_file (str): path to save file
+        backup (bool): if true, creates backup as file with '_backup' suffix
     """
+    if backup:
+        try:
+            with open(memory_file, "rb") as file:
+                old_content = pickle.load(file)
+            backup_path = memory_file + "_backup"
+            save_memory_to_file(old_content, backup_path, backup=False)
+        except FileNotFoundError as e:
+            pass
     with open(memory_file, "wb") as file:
         pickle.dump(memory, file, protocol=pickle.HIGHEST_PROTOCOL)
 
