@@ -1,4 +1,3 @@
-import itertools
 import random
 from typing import Dict, List, Tuple
 

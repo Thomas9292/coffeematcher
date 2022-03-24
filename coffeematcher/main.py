@@ -15,7 +15,7 @@ def main():
     participants = parse_participants(participants_raw)
     matches = match_participants([*participants], memory_file)
 
-    email_body = format_email(matches)
+    email_body = format_email(matches, participants)
     recipients = format_email_recipients(participants)
 
     print(recipients, end="\n\n-----\n\n")
