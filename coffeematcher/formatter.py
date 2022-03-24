@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import Dict, List, Tuple
 
 
 def format_email(matches: List[Tuple[str, str]]) -> str:
@@ -8,5 +8,13 @@ def format_email(matches: List[Tuple[str, str]]) -> str:
     )
 
 
-def format_email_recipients(participants: List[str]) -> str:
-    return ", ".join(participants)
+def format_email_recipients(participants: Dict[str, str]) -> str:
+    """Formats email addresses ready to be pasted in outloo
+
+    Args:
+        participants (Dict[str, str]): dictionary of participants (email -> name)
+
+    Returns:
+        str: formatted string with participant emails
+    """
+    return ", ".join(participants.keys())

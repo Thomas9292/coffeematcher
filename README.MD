@@ -12,7 +12,7 @@ git clone https://github.com/Thomas9292/coffeematcher.git
 Navigate to the project folder and use [pip](https://pip.pypa.io/en/stable/) to install coffeematcher.
 
 ```bash
-pip -e install .
+pip install -e .
 ```
 
 ## Usage
