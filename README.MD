@@ -16,9 +16,25 @@ pip install -e .
 ```
 
 ## Usage
+Paste the contents of a table copied from teams in a file: `data/teams_participants.txt`. The table should have the following contents
 
-#### Populate the list of participants
-T.B.D.
+<table>
+  <tr>
+    <td>First name</td>
+    <td>Last name</td>
+    <td>Email address</td>
+  </tr>
+  <tr>
+    <td>Thomas</td>
+    <td>Wesselink</td>
+    <td>email@example.com</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+</table>
 
 #### Run the script
 ```bash
